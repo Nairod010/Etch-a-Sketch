@@ -1,1 +1,43 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+} 
 
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 160px;
+    width: 160px;
+    flex-wrap: wrap;
+}
+
+.square{
+    display: flex;
+    box-sizing: border-box;
+    min-height: 10px;
+    min-width: 10px;
+    border: 1px  solid  black;
+}
+
+.reset{
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 3px;
+    margin-bottom: 30px;
+}
+
+.reset:hover {
+    background-color: red;
+}
+
+.square > * {
+    flex-grow: 1 ;
+}
+
+/*.square:hover{
+    background-color: grey;
+}*/
