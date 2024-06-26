@@ -18,7 +18,7 @@ To get started with this project, follow these steps:
 
 ## How to Use
 
-- **Draw:** Click and drag your mouse across the grid to start drawing.
+- **Draw:**  Hover your mouse across the grid to start drawing.
 - **Change Colors:** Select your desired color from the color palette to change the pen color.
 - **Reset Canvas:** Click the 'Reset' button to clear the canvas and start a new drawing.
 - **Adjust Size:**  Adjust the grid size by pressing the RESET button on top of the grid, an alert will pop-up where an amount of square will be required
