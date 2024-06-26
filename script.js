@@ -18,9 +18,15 @@ grid.addEventListener("hover", () => {
 
 const changeColorButton = document.createElement("button");
 changeColorButton.className = "changeColor";
-changeColorButton.textContent = "Change Color";
+changeColorButton.textContent = "Random Colors";
 
 changeColorButton.addEventListener("click",randomColorChange);
+
+const RevertToBlackButton = document.createElement("button");
+RevertToBlackButton.className = "revertBlack";
+RevertToBlackButton.textContent = "Black Color";
+
+//RevertToBlackButton.addEventListener("click", backToBlackChange);
 
 function createGrid(num){
     let dimension = 640/num
@@ -50,7 +56,6 @@ createGrid(16);
 
 function randomColorChange(){
     let divSquares = document.querySelectorAll("div.square"); 
-    console.log(divSquares);
     const squareNumbers = Object.keys(divSquares).length;
     for(let i = 0; i <squareNumbers; i++){
         divSquares[i].addEventListener("mouseover", () => {
@@ -60,6 +65,18 @@ function randomColorChange(){
     };
 };
 
+function revertColorToBlack(){
+    let divSquares = document.querySelectorAll("div.square"); 
+    const squareNumbers = Object.keys(divSquares).length;
+    for(let i = 0; i <squareNumbers; i++){
+        divSquares[i].addEventListener("mouseover", () => {
+            divSquares[i].style.backgroundColor= "black"; 
+
+        });
+    };
+};
+
+RevertToBlackButton.addEventListener("click", revertColorToBlack);
 
 changeColorButton.addEventListener("click",randomColorChange);
 
@@ -94,3 +111,4 @@ buttonsContainer.appendChild(resetButton);
 
 
 buttonsContainer.appendChild(changeColorButton);
+buttonsContainer.appendChild(RevertToBlackButton);

@@ -28,7 +28,7 @@ body{
     border: 1px  solid  black;
 }
 
-.reset,.changeColor{
+.reset,.changeColor, .revertBlack{
     padding: 10px;
     border: 2px solid black;
     border-radius: 5px;
@@ -39,7 +39,7 @@ body{
     background-color: rgba(0,100 ,100, 10%);
 }
 
-.reset:hover ,.changeColor:hover{
+.reset:hover ,.changeColor:hover, .revertBlack:hover{
     background-color: rgb(255, 155, 0);
 }
 
