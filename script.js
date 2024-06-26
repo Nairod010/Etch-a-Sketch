@@ -22,6 +22,7 @@ function createGrid(num){
             square.className = "square";
             square.style.height = dimension+"px";
             square.style.width = dimension+"px";
+            square.style.backgroundColor = "white";
             square.addEventListener("mouseover", () => {
                 square.style.backgroundColor= "blue";
             });
@@ -49,8 +50,16 @@ const resetButton = document.createElement("button");
 resetButton.className = "reset";
 resetButton.textContent = "RESET";
 resetButton.addEventListener("click", () => {
+    let changeAlert = prompt("Choose the density of the squares between 16 to 100", 16);
+    if(changeAlert > 100){
+        alert("The density can not be bigger than 100, it's been set to maximum")
+        changeAlert = 100;
+    } else if (changeAlert < 16){
+        alert("The density can not be smaller than 16, it's been set to minimum")
+        changeAlert = 16;
+    }
     deleteSquares();
-    createGrid(100);
+    createGrid(changeAlert);
 });
 container.insertBefore(resetButton, gridSquare);
 

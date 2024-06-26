@@ -1,3 +1,6 @@
+body{
+    background-image: url(https://r4.wallpaperflare.com/wallpaper/908/34/383/lofi-digital-anthro-hd-wallpaper-89a078dd31ca7dbb360718bf6031660d.jpg);
+}
 .container{
     display: flex;
     flex-direction: column;
@@ -7,6 +10,8 @@
 } 
 
 .grid {
+    border: 3px solid black;
+    border-radius: 3px;
     display: flex;
     justify-content: center;
     align-items: center;
