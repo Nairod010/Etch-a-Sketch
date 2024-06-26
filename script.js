@@ -1,9 +1,12 @@
 const body = document.querySelector("body");
 const container = document.querySelector("div");
 const gridSquare = document.createElement("div");
-gridSquare.className = "grid";
-container.appendChild(gridSquare);
+const buttonsContainer = document.createElement("div");
 
+gridSquare.className = "grid";
+buttonsContainer.className = "buttonsContainer";
+container.appendChild(buttonsContainer);
+container.appendChild(gridSquare);
 
 
 let grid = document.createElement("div");
@@ -12,6 +15,12 @@ grid.addEventListener("hover", () => {
     grid.style.backgroundColor= "blue";
 });
 
+
+const changeColorButton = document.createElement("button");
+changeColorButton.className = "changeColor";
+changeColorButton.textContent = "Change Color";
+
+changeColorButton.addEventListener("click",randomColorChange);
 
 function createGrid(num){
     let dimension = 640/num
@@ -23,17 +32,36 @@ function createGrid(num){
             square.style.height = dimension+"px";
             square.style.width = dimension+"px";
             square.style.backgroundColor = "white";
+            
             square.addEventListener("mouseover", () => {
-                square.style.backgroundColor= "blue";
+                square.style.backgroundColor= "black";
+                                
+
             });
 
             gridSquare.appendChild(square);
         };
     };
+    
 };
 
 
 createGrid(16);
+
+function randomColorChange(){
+    let divSquares = document.querySelectorAll("div.square"); 
+    console.log(divSquares);
+    const squareNumbers = Object.keys(divSquares).length;
+    for(let i = 0; i <squareNumbers; i++){
+        divSquares[i].addEventListener("mouseover", () => {
+            divSquares[i].style.backgroundColor= "#" + Math.floor(Math.random() * 16777215).toString(16);
+
+        });
+    };
+};
+
+
+changeColorButton.addEventListener("click",randomColorChange);
 
 function deleteSquares() {
     let element = document.querySelector("div.grid");
@@ -61,6 +89,8 @@ resetButton.addEventListener("click", () => {
     deleteSquares();
     createGrid(changeAlert);
 });
-container.insertBefore(resetButton, gridSquare);
+buttonsContainer.appendChild(resetButton);
+//container.insertBefore(resetButton, gridSquare);
 
 
+buttonsContainer.appendChild(changeColorButton);
